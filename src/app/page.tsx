@@ -217,13 +217,20 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Welcome Text with Typewriter Effect */}
-            <div className="mb-6">
-              <h1 className="text-3xl md:text-5xl font-bold glow terminal-cursor">
-                {typedText}
-                {showCursor && <span className="text-cyan-400">_</span>}
-              </h1>
-            </div>
+                  {/* Main Title */}
+                  <div className="mb-6">
+                    <h1 className="text-4xl md:text-6xl font-bold glow text-cyan-400 mb-4">
+                      Solana Transmitted Degeneracy
+                    </h1>
+                  </div>
+
+                  {/* Welcome Text with Typewriter Effect */}
+                  <div className="mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold glow terminal-cursor">
+                      {typedText}
+                      {showCursor && <span className="text-cyan-400">_</span>}
+                    </h2>
+                  </div>
 
             {/* Description */}
             <div className="mb-12 max-w-4xl mx-auto">
@@ -438,23 +445,43 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* Audio Player - Bottom Left */}
-      {!showLoader && (
-        <div className="fixed bottom-4 left-4 z-50">
-          <div className="bg-black bg-opacity-80 p-3 rounded-lg border border-cyan-400 border-opacity-50 flex items-center space-x-3">
-            <button
-              onClick={toggleAudio}
-              className="text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              {isPlaying ? <FaPause className="w-5 h-5" /> : <FaPlay className="w-5 h-5" />}
-            </button>
-            <FaVolumeUp className="w-4 h-4 text-cyan-400" />
-            <span className="text-cyan-300 text-sm font-mono">
-              {isPlaying ? 'VIRUS SOUND' : 'MUTED'}
-            </span>
-          </div>
-        </div>
-      )}
+            {/* Audio Player - Bottom Left */}
+            {!showLoader && (
+              <div className="fixed bottom-4 left-4 z-50">
+                <div className="bg-black bg-opacity-80 p-3 rounded-lg border border-cyan-400 border-opacity-50 flex items-center space-x-3">
+                  <button
+                    onClick={toggleAudio}
+                    className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    {isPlaying ? <FaPause className="w-5 h-5" /> : <FaPlay className="w-5 h-5" />}
+                  </button>
+                  <FaVolumeUp className="w-4 h-4 text-cyan-400" />
+                  <span className="text-cyan-300 text-sm font-mono">
+                    {isPlaying ? 'VIRUS SOUND' : 'MUTED'}
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {/* X (Twitter) Button - Bottom Right */}
+            {!showLoader && (
+              <div className="fixed bottom-4 right-4 z-50">
+                <a
+                  href="https://x.com/i/communities/1981411644161868254/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black bg-opacity-80 p-4 rounded-full border-2 border-cyan-400 border-opacity-50 hover:border-opacity-100 hover-glow transition-all duration-300 flex items-center justify-center group"
+                >
+                  <svg 
+                    className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors" 
+                    fill="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+              </div>
+            )}
     </div>
   );
 }
