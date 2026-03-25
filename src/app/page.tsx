@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import MatrixRain from '@/components/MatrixRain';
-import { TOKEN_CONFIG } from '@/lib/config';
 import { 
   FaVirus, 
   FaExclamationTriangle, 
@@ -86,11 +85,6 @@ export default function Home() {
       document.body.style.overflow = 'auto';
     };
   }, [showLoader]);
-
-  const copyContractAddress = () => {
-    navigator.clipboard.writeText('GBvFrsz8d2T7GgkhpqmXKo8ctL5TUcuMvX76GV8ipump');
-    // You could add a toast notification here
-  };
 
   return (
     <div className={`min-h-screen relative ${showLoader ? 'overflow-hidden' : 'overflow-auto'}`}>
@@ -463,34 +457,11 @@ export default function Home() {
               </div>
             )}
 
-            {/* Contract Address Copy Button - Center Bottom */}
-            {!showLoader && (
-              <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
-                <button
-                  onClick={copyContractAddress}
-                  className="bg-black bg-opacity-80 px-6 py-3 rounded-lg border-2 border-cyan-400 border-opacity-50 hover:border-opacity-100 hover-glow transition-all duration-300 flex items-center space-x-3 group"
-                >
-                  <FaVirus className="w-4 h-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-                  <span className="text-cyan-300 text-sm font-mono group-hover:text-cyan-200 transition-colors">
-                    CA: GBvFrsz8d2T7GgkhpqmXKo8ctL5TUcuMvX76GV8ipump
-                  </span>
-                  <svg 
-                    className="w-4 h-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                </button>
-              </div>
-            )}
-
             {/* X (Twitter) Button - Bottom Right */}
             {!showLoader && (
               <div className="fixed bottom-4 right-4 z-50">
                 <a
-                  href="https://x.com/i/communities/1981411644161868254/"
+                  href="https://x.com/i/communities/2033509513937252782"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-black bg-opacity-80 p-4 rounded-full border-2 border-cyan-400 border-opacity-50 hover:border-opacity-100 hover-glow transition-all duration-300 flex items-center justify-center group"
